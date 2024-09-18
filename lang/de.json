@@ -1,0 +1,492 @@
+{
+    "pf2e-hud": {
+        "gmOnly": "Nur SL",
+        "reload": "Erfordert  Neuladen",
+        "keybindings": {
+            "setActor": {
+                "name": "Setze dauerhaften Akteur",
+                "hint": "Lege den Akteur des ausgewählten Tokens als dauerhaft fest."
+            },
+            "altTracker": {
+                "name": "Combat Tracker umschalten",
+                "hint": "Schalte das Menü des Combat Trackers um, um weitere Optionen anzuzeigen."
+            },
+            "filter": {
+                "name": "Verwende Seitenleistenfilter",
+                "hint": "Erlaube das Filtern des aktuellen Seitenleisteninhalts."
+            }
+        },
+        "settings": {
+            "partyAsObserved": {
+                "name": "Gruppenallianz als Beobachter",
+                "hint": "Betrachte die Akteure in der Allianz 'Gruppe' als von den Spielern zu beobachtende Akteure, um den Tooltip zu erweitern oder Gesundheitsdetails im Combat Tracker anzuzeigen. Nicht zu verwechseln mit dem Akteur 'Gruppe'."
+            },
+            "highestSpeed": {
+                "name": "Zeige höchste Geschwindigkeit",
+                "hint": "Wenn keine Geschwindigkeit manuell ausgewählt wurde, wird standardmäßig immer die höchste angezeigt, auch wenn die Geschwindigkeit über Land nicht 0 ist."
+            },
+            "useModifiers": {
+                "name": "Verwende Modifikatoren",
+                "hint": "Zeige Modifikatoren anstelle des Schwierigkeitswerts in den verschiedenen HUD-Elementen an."
+            },
+            "popup": {
+                "title": "Popup",
+                "onCursor": {
+                    "name": "Am Cursor einblenden",
+                    "hint": "Das Popup des Moduls wird beim ersten Rendern auf dem Cursor zentriert (anstatt in der Mitte des Ansichtsfensters angezeigt zu werden)."
+                },
+                "fontSize": {
+                    "name": "Schriftgröße",
+                    "hint": "Das Pop-up-Fenster skaliert sich dynamisch mit der Schriftgröße. HINWEIS: Das Modul wurde für eine Schriftgröße von 14 entworfen."
+                },
+                "closeOnSendToChat": {
+                    "name": "Schließen beim Senden-an-Chat",
+                    "hint": "Soll das Popup geschlossen werden, wenn ein Element über die Schaltfläche in der Kopfzeile an den Chat gesendet wird?"
+                }
+            },
+            "sidebar": {
+                "title": "Seitenleisten",
+                "hideUntrained": {
+                    "name": "Verberge Ungeübt",
+                    "hint": "Sollten Fertigkeiten in der Seitenleiste ausgeblendet werden, wenn der Charakter in ihnen nicht geübt ist?"
+                },
+                "fontSize": {
+                    "name": "Schriftgröße",
+                    "hint": "Die Seitenleisten skalieren sich dynamisch mit der Schriftgröße. HINWEIS: Das Modul wurde für eine Schriftgröße von 14 entworfen."
+                },
+                "multiColumns": {
+                    "name": "Mehrspaltig",
+                    "hint": "Wenn die Höhe einer Seitenleiste größer als ihre maximale Höhe ist, wird sie in bis zu x Spalten aufgeteilt. HINWEIS: Firefox hat die seltsame Eigenart, bei Verwendung dieser Funktion eine horizontale Bildlaufleiste zu erzwingen."
+                },
+                "maxHeight": {
+                    "name": "Max. Höhe",
+                    "hint": "Legt die maximale Höhe der Seitenleisten als Prozentsatz des Ansichtsfensters fest."
+                }
+            },
+            "shared": {
+                "enabled": {
+                    "name": "Aktiviert",
+                    "hint": "Aktiviert dieses HUD-Element auf deinem Client."
+                },
+                "fontSize": {
+                    "name": "Schriftgröße",
+                    "hint": "Das HUD-Element skaliert dynamisch mit der Schriftgröße. HINWEIS: Das Modul wurde für eine Schriftgröße von 14 entworfen"
+                },
+                "showAlliance": {
+                    "name": "Allianz-Button",
+                    "hint": "Zeige die Schaltfläche für Allianz/Disposition auf dem HUD an."
+                }
+            },
+            "tooltip": {
+                "title": "Token-Tooltip",
+                "status": {
+                    "name": "Gesundheitszustand",
+                    "hint": "Durch Kommas getrennte Strings, die die verschiedenen Stufen des Gesundheitszustands einer Kreatur vom schlechtesten bis zum besten darstellen. Zum Deaktivieren leer lassen.",
+                    "default": "Tot, Dem Tod nahe, Fühlt sich nicht gut, Hat schon bessere Tage gesehen, Kaum verletzt, Völlig in Ordnung"
+                },
+                "type": {
+                    "name": "Erweiterter Tooltip",
+                    "hint": "Ob/wann die erweiterte Version des Tooltips verwendet werden soll.",
+                    "choices": {
+                        "never": "Niemals",
+                        "owned": "Nur Besitzer",
+                        "observed": "Besitzer und Beobachter"
+                    }
+                },
+                "delay": {
+                    "name": "Tooltip-Verzögerung",
+                    "hint": "Verzögerung in Millisekunden, bevor der Tooltip auf dem Bildschirm angezeigt wird."
+                },
+                "position": {
+                    "name": "Position",
+                    "hint": "Wähle eine bevorzugte Seite aus, auf der der Tooltip angezeigt werden soll. Wenn dies nicht möglich ist, versucht das Modul es zuerst auf der gegenüberliegenden Seite, andernfalls auf einer der verbleibenden beiden Seiten.",
+                    "choices": {
+                        "left": "Links",
+                        "right": "Rechts",
+                        "top": "Oben",
+                        "bottom": "Unten"
+                    }
+                },
+                "showDistance": {
+                    "name": "Distanz anzeigen",
+                    "hint": "Zeigt die Entfernung zwischen dem Token unter dem Mauszeiger und einem automatisch ermittelten Token an.",
+                    "choices": {
+                        "never": "Niemals",
+                        "idiot": "In Fuß",
+                        "smart": "In Metern",
+                        "weird": "In Feldern"
+                    }
+                },
+                "drawDistance": {
+                    "name": "Distanz zeichnen",
+                    "hint": "Zeichne eine Linie in dieser Stärke zwischen dem mit der Maus angezeigten Token und dem 'Distanz'-Ziel."
+                },
+                "noDead": {
+                    "name": "Toter Akteur",
+                    "hint": "Welche Art von Tooltip sollte angezeigt werden, wenn man mit der Maus über einen toten Akteur fährt?",
+                    "choices": {
+                        "none": "Kein Tooltip",
+                        "small": "Nur kleine Version",
+                        "full": "Erweiterte Version"
+                    }
+                }
+            },
+            "token": {
+                "title": "Token HUD",
+                "scaleDimensions": {
+                    "name": "Mit Token skalieren",
+                    "hint": "Soll das HUD seine Abmessungen mit dem Token skalieren, an dem es befestigt ist, anstatt feste Abmessungen zu haben?"
+                },
+                "mode": {
+                    "name": "Anzeigemodus",
+                    "hint": "Wähle den Anzeigemodus des Token-HUD aus.",
+                    "choices": {
+                        "exploded": "Gesprengt",
+                        "left": "Gruppiert (Links)",
+                        "right": "Gruppiert (rechts)"
+                    }
+                },
+                "closeAllOnCLick": {
+                    "name": "Vollständig schließen bei Klick",
+                    "hint": "Wenn diese Option aktiviert ist, wird das HUD durch Klicken auf eine beliebige Stelle auf der Spielfläche vollständig geschlossen. Ist sie deaktiviert, wirst du zunächst aus einem Eingabefeld herausgeführt oder die Seitenleiste wird vorher geschlossen."
+                },
+                "closeOnSpell": {
+                    "name": "Schließe beim Zauberwirken",
+                    "hint": "Soll das HUD/die Seitenleiste geschlossen werden, wenn ein Zauber gewirkt wird?"
+                },
+                "closeOnSendToChat": {
+                    "name": "Schließen beim Senden-an-Chat",
+                    "hint": "Soll das HUD/die Seitenleiste geschlossen werden, wenn ein Element an den Chat gesendet wird?"
+                },
+                "closeOnSkill": {
+                    "name": "Schließen bei Fertigkeitswurf",
+                    "hint": "Soll das HUD/die Seitenleiste geschlossen werden, wenn ein Fertigkeitswurf durchgeführt wird?"
+                }
+            },
+            "persistent": {
+                "title": "Dauerhaftes HUD",
+                "noflash": {
+                    "name": "Flasheffekte deaktivieren",
+                    "hint": "Deaktiviert den Flash-Effekt des Porträts bei Auswahl eines Tokens, das mit dem aktuell gesetzten dauerhaften Akteur verknüpft ist."
+                },
+                "closeOnSkill": {
+                    "name": "Seitenleiste bei Fertigkeitswurf schließen",
+                    "hint": "Soll die Seitenleiste geschlossen werden, wenn eine Fertigkeit gewürfelt wird?"
+                },
+                "closeOnSpell": {
+                    "name": "Schließe die Seitenleiste beim Zauberwirken",
+                    "hint": "Soll die Seitenleiste geschlossen werden, wenn ein Zauber gewirkt wird?"
+                },
+                "closeOnSendToChat": {
+                    "name": "Schließe Seitenleiste beim Senden-an-Chat",
+                    "hint": "Soll die Seitenleiste geschlossen werden, wenn ein Element an den Chat gesendet wird?"
+                },
+                "consumableShortcut": {
+                    "name": "Verbrauchsmaterial-Schnellwahl",
+                    "hint": "Was beim Klicken auf eine Schnellwahl für Verbrauchsmaterialien passieren soll.",
+                    "choices": {
+                        "use": "Direkt verwenden",
+                        "confirm": "Vor Gebrauch bestätigen",
+                        "chat": "Nur in den Chat senden"
+                    }
+                },
+                "confirmShortcut": {
+                    "name": "Bestätige Schnellwahl für Aktion/Zauber",
+                    "hint": "Sollten die Schnellwahlen für Zauber und Aktionen bestätigt werden müssen, bevor sie verwendet werden."
+                },
+                "autoSet": {
+                    "name": "Akteur automatisch einstellen",
+                    "hint": "Wenn kein dauerhafter Akteur festgelegt wurde, wird der aktuell ausgewählte Token-Akteur oder der aktuelle Kampfakteur automatisch als dauerhaft festgelegt.",
+                    "choices": {
+                        "disabled": "Deaktiviert",
+                        "select": "Bei Token-Auswahl",
+                        "combat": "Aktueller Kampfteilnehmer"
+                    }
+                },
+                "keepLast": {
+                    "name": "Behalte den letzten Dauerhaften",
+                    "hint": "Wenn die Option 'Akteur automatisch einstellen' verwendet wird, sollte der letzte gültige Akteur als Dauerhaft beibehalten werden, anstatt entfernt zu werden. Es wird weiterhin auf den zugewiesenen Akteur zurückgesetzt, wenn ein solcher vorhanden ist und 'Bei Token-Auswahl' ausgewählt ist."
+                },
+                "autoFillNpc": {
+                    "name": "NSCs automatisch ausfüllen",
+                    "hint": "Wenn du keine manuellen Änderungen vorgenommen hast, werden die Schnellwahl-Slots automatisch ausgefüllt."
+                },
+                "autoFillActions": {
+                    "name": "Aktionen automatisch ausfüllen",
+                    "hint": "Sollen NSC-Aktionen, die 1 bis 3 Aktionen kosten, nach den Angriffen hinzugefügt werden?"
+                },
+                "autoFillReactions": {
+                    "name": "Reaktionen automatisch ausfüllen",
+                    "hint": "Sollen NSC-Reaktionen nach den Angriffen hinzugefügt werden?"
+                },
+                "autoFillType": {
+                    "name": "Voreinstellung für automatisches Ausfüllen",
+                    "hint": "Die Prioritätsreihenfolge für die verbleibenden Plätze.",
+                    "choices": {
+                        "one": "Aktionen -> Zaubersprüche -> Verbrauchsmaterialien",
+                        "two": "Aktionen -> Verbrauchsmaterialien -> Zaubersprüche"
+                    }
+                },
+                "ownerShortcuts": {
+                    "name": "Verwende Schnellwahlen des Besitzers",
+                    "hint": "Wenn du keine manuellen Änderungen an einem Charakter vorgenommen hast, der einem Akteur gehört, werden die Schnellwahlen seines Besitzers verwendet."
+                },
+                "shiftEffects": {
+                    "name": "Halte die Umschalttaste für Effekte gedrückt",
+                    "hint": "Für die Interaktion mit Effektsymbolen muss die Umschalttaste gedrückt gehalten werden."
+                },
+                "shortcutSlots": {
+                    "name": "Schnellwahl-Plätze",
+                    "hint": "Die Anzahl der verfügbaren Plätze für die Schnellwahl. HINWEIS: Das Modul wurde für 4 Plätze konzipiert."
+                }
+            },
+            "tracker": {
+                "title": "Combat Tracker",
+                "started": {
+                    "name": "Erst nach dem Start",
+                    "hint": "Der Tracker wird Spielern nur angezeigt, wenn der Kampf tatsächlich begonnen hat (und zusätzlich muss ein Kämpfer teilnehmen)."
+                },
+                "textureScaling": {
+                    "name": "Textur-Skalierung",
+                    "hint": "„Invertieren“ skaliert das Bild des Kämpfers basierend auf der Skalierung der Token-Textur."
+                }
+            },
+            "resources": {
+                "title": "Ressourcen-Tracker",
+                "enabled": {
+                    "hint": "Ermöglicht die Verfolgung benutzerdefinierter Ressourcen in deiner Welt."
+                }
+            }
+        },
+        "hud": {
+            "adjustment": "Anpassung: {value}",
+            "alliance": "Allianz: {value}",
+            "tempHP": "Temporäre Trefferpunkte",
+            "resolve": {
+                "title": "Verwende Fokuspunkt",
+                "full": "{name} ist voll erholt und benötigt keine Ruhepause.",
+                "breather": {
+                    "used": "{name} hat {ratio} SP und gibt einen Fokuspunkt aus, um eine 10-minütige Verschnaufpause einzulegen. Ausdauer wiederhergestellt."
+                }
+            }
+        },
+        "tooltip": {
+            "distance": {
+                "feet": "Fuß",
+                "meter": "m",
+                "square": "Feld"
+            }
+        },
+        "token": {
+            "closeChoices": {
+                "never": "Deaktiviert",
+                "sidebar": "Nur Seitenleiste",
+                "all": "HUD & Seitenleiste"
+            }
+        },
+        "persistent": {
+            "error": {
+                "selectOne": "Wähle einen einzelnen NPC/Charakter-Token aus, um ihn als deinen dauerhaften Akteur festzulegen."
+            },
+            "menu": {
+                "openSheet": "Blatt öffnen",
+                "setActor": "Setze das ausgewählte Token als dauerhaften Akteur",
+                "unsetActor": "Dauerhaften Akteur freigeben",
+                "clean": {
+                    "always": "Zeige UI immer auf Porträt an",
+                    "hover": "UI nur anzeigen, wenn Maus über das Porträt bewegt wird"
+                }
+            },
+            "portrait": {
+                "selectActor": "Stelle diesen Schauspieler als Dauerhaft ein"
+            },
+            "main": {
+                "shortcut": {
+                    "wrongActor": "Du kannst Schnellwahlen nur vom selben dauerhaften Akteur erstellen.",
+                    "wrongType": "Du kannst keine Schnellwahl dieses Typs erstellen.",
+                    "wrongOrigin": "Nur Zaubersprüche aus einer HUD-Seitenleiste können in Schnellwahlen umgewandelt werden.",
+                    "confirm": {
+                        "title": "Verwende - {name}",
+                        "message": "Bist du sicher, dass du <strong>{name}</strong> verwenden möchtest?"
+                    },
+                    "draw": {
+                        "title": "{type} - {name}",
+                        "message": "Bist du sicher, dass du {type} <strong>{name}</strong> {type} möchtest?"
+                    },
+                    "noChannelElements": "Auf diesem Charakter konnte die Aktion <strong>Elemente kanalisieren</strong> nicht gefunden werden.",
+                    "delete": {
+                        "title": "Schnellwahlen zurücksetzen",
+                        "message": "Möchtest du wirklich alle Schnellwahlen für <strong>{name}</strong"
+                    },
+                    "fill": {
+                        "title": "Schnellwahlen automatisch ausfüllen",
+                        "message": "Bist du sicher, dass du alle Schnellwahlen für <strong>{name}</strong> automatisch ausfüllen möchtest?"
+                    },
+                    "owner": {
+                        "title": "Schnellwahlen des Besitzers kopieren",
+                        "message": "Bist du sicher, dass du die Schnellwahlen vom Besitzer von <strong>{name}</strong> kopieren möchtest?",
+                        "none": "Dieser Charakter hat keinen Besitzer mit festgelegten Schnellwahlen."
+                    }
+                },
+                "effects": {
+                    "shift": "Shift",
+                    "toggle": "Effekte umschalten"
+                }
+            }
+        },
+        "tracker": {
+            "expanded": "Erweitert, zum Zusammenklappen klicken",
+            "collapsed": "Zusammengeklappt, zum Erweitern klicken",
+            "fake": {
+                "nothing": "Begegnung nicht gestartet",
+                "secret": "Etwas Geheimnisvolles passiert"
+            },
+            "unknown": "Unbekannt",
+            "delay": "Zug verzögern",
+            "join": "Am Zug teilnehmen"
+        },
+        "resources": {
+            "resource": "Ressource",
+            "add": "Neue Ressource hinzufügen",
+            "menu": {
+                "title": {
+                    "create": "Neue Ressource erstellen",
+                    "edit": "Ressource bearbeiten"
+                },
+                "delete": "Ressource löschen?",
+                "min": "Mindestwert",
+                "max": "Maximaler Wert",
+                "current": "Aktueller Wert",
+                "visible": "Für Spieler sichtbar?",
+                "name": {
+                    "label": "Ressourcenname",
+                    "default": "Neue Ressource"
+                },
+                "button": {
+                    "yes": {
+                        "create": "Erstellen",
+                        "edit": "Bearbeiten"
+                    },
+                    "no": "Abbrechen"
+                }
+            },
+            "edit": "[Rechtsklick] Ressource bearbeiten",
+            "increase": "{click} um {value} erhöhen",
+            "decrease": "{click} um {value} verringern",
+            "step1": "[Klick]",
+            "step2": "[Shift+Klick]",
+            "step3": "[Strg+Klick]"
+        },
+        "sidebars": {
+            "actions": {
+                "title": "Aktionen",
+                "reach": "Reichweite {reach} Fuß",
+                "thrown": "Geworfen {increment}/{max} Fuß",
+                "ranged": "Reichweite {max} Fuß",
+                "rangedWithIncrement": "Reichweite {increment}/{max} Fuß",
+                "blasts": "Elementarexplosionen",
+                "stances": "Haltungen",
+                "reset": "Nutzungen zurücksetzen",
+                "stowedWeapons": {
+                    "shown": "Verstaute Waffen werden angezeigt",
+                    "hidden": "Verstaute Waffen werden verborgen"
+                },
+                "outOfCombat": "[Strg + Klicken], um zu erzwingen"
+            },
+            "annotation": {
+                "pick-up": "Aufheben",
+                "retrieve": "Zurückholen",
+                "sheathe": "Wegstecken",
+                "draw": "Ziehen"
+            },
+            "items": {
+                "title": "Inventar"
+            },
+            "spells": {
+                "title": "Zauberwirken",
+                "staff": "Stab",
+                "charges": "Ladungen",
+                "cast": "Wirke den Zauber",
+                "draw": "Ziehe Verbrauchsmaterial",
+                "broken": "Unterbrochener Zauber"
+            },
+            "skills": {
+                "title": "Fertigkeiten",
+                "roll": "Wurf: {name}",
+                "proficient": "Kompetenz",
+                "follow": "Folge dem Experten"
+            },
+            "extras": {
+                "title": "Extras",
+                "noMacro": "Makros hier ablegen ",
+                "delete": {
+                    "title": "Makro löschen",
+                    "confirm": "Bist du sicher, dass du dieses Makro löschen möchtest?"
+                },
+                "use": {
+                    "title": "Makro ausführen"
+                },
+                "edit": {
+                    "title": "Makro bearbeiten"
+                }
+            },
+            "filter": {
+                "label": "Seitenleistenfilter"
+            }
+        },
+        "leftClick": "[Linksklick]",
+        "rightClick": "[Rechtsklick]",
+        "actions": {
+            "borrowArcaneSpell": "Arkanen Zauber ausleihen",
+            "recall-knowledge": {
+                "result": "Result",
+                "modifier": "Mod.",
+                "target": "Ziel",
+                "first": "1.",
+                "second": "2.",
+                "third": "3.",
+                "fourth": "4.",
+                "fifth": "5.",
+                "sixth": "6.",
+                "dc": "SG",
+                "unspecific": "Unspezifisch",
+                "specific": "Specifisch"
+            },
+            "drive": {
+                "drive1": "Aktion <span class=\"action-glyph\">1</span>",
+                "drive2": "Aktion <span class=\"action-glyph\">2</span>",
+                "drive3": "Aktion <span class=\"action-glyph\">3</span>"
+            }
+        },
+        "utils": {
+            "avatar": {
+                "title": "Bearbeite Avatar - {name}",
+                "src": {
+                    "actor": "Verwende Akteur-Bild",
+                    "token": "Verwende Token-Bild"
+                },
+                "save": "Speichern",
+                "cancel": "Abbrechen",
+                "contain": "Enthält",
+                "reset": "Zurücksetzen"
+            }
+        },
+        "dialogs": {
+            "variants": {
+                "title": "Aktionsvarianten",
+                "statistic": "Statistik",
+                "dc": "Schwierigkeitsgrad"
+            },
+            "resolve": {
+                "full": "{Name} ist voller Ausdauer und braucht keine Rast.",
+                "breather": {
+                    "label": "Atme tief durch",
+                    "hint": "Ruhe dich 10 Minuten aus, gib einen Fokuspunkt aus und erhalte deine gesamte Ausdauer zurück."
+                },
+                "steel": {
+                    "hint": "Führe eine Aktion aus, gib einen Fokuspunkt aus und erhalte die Hälfte deiner Ausdauer zurück."
+                }
+            }
+        }
+    }
+}
